@@ -31,5 +31,8 @@ In this work, I will create an Amazon-like storefront with MySQL. The function o
 ![MySQL Database](/images/product_display.png)
 See also table displayed in MySQL workbench
 ![MySQL Database](/images/table_display.png)
+* Create a switch statement and use inquirer to make app prompt users with two messages:
+	*The ID of the product they would like to buy.
+	*How many units of the product they would like to buy. 
 
 
