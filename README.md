@@ -6,3 +6,7 @@ In this work, I will create an Amazon-like storefront with MySQL. The function o
 2. Deplete stock from the store's inventory
 3. Track product sales across departments
 4. Provide a summary of the highest gross departments in the store
+
+## Actions
+* Create a git repository named **MySQL_Amazon**
+* Create package.JSON file that includes inquirer and MySQL npm packages
