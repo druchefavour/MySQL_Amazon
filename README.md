@@ -10,7 +10,7 @@ In this work, I will create an Amazon-like storefront with MySQL. The function o
 ## Actions
 * Create a git repository named **MySQL_Amazon**
 * Create package.JSON file that includes inquirer and MySQL npm packages
-* Create seeds.sql consisting of the database script
+* Create schema.sql consisting of the database script
 * Create MySQL Database called Bamazon_db
 * Make it so all of the following code will affect Bamazon_db
 * Create a table called "products" within Bamazon_db
@@ -24,4 +24,6 @@ In this work, I will create an Amazon-like storefront with MySQL. The function o
 * Run the app to create database and table
 ![MySQL Database](/images/create_database.png)
 Format: ![Alt Text](url)
+* Create seeds.sql consisting of the database script
+*Populate the database with 10 different products.
 

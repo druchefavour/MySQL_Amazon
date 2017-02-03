@@ -17,4 +17,35 @@ stock_quantity INTEGER(10),
 -- Set the primary key of the table to id --
   PRIMARY KEY (id)
   );
+  
+-- Populate database with products
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Goliath", "video", 10, 54);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Manchester by the sea", "video", 15, 69);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Neon Demon", "video", 13, 100);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Shopkins", "toys", 8, 222);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Barbie", "toys", 17, 147);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Ascics", "fashion", 115, 87);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Party_Dress", "fashion", 48, 150);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Speechless", "fashion", 42, 80);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Dining_Table", "funiture", 130, 18);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Flash_Furniture", "funiture", 105, 39);
  
