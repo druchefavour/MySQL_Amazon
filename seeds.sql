@@ -1,7 +1,7 @@
--- Create database called "Bamazon_db" --
-CREATE DATABASE Bamazon_db;
+-- Create database called "Bamazon" --
+CREATE DATABASE Bamazon;
 -- Make it so all of the following code will affect Bamazon_db --
-USE Bamazon_db;
+USE Bamazon;
 -- Create the table "products" within Bamazon_db --
 CREATE TABLE products (
 -- Create a numeric column called "id" which automatically increments and cannot be null --

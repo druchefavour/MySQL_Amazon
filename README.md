@@ -25,5 +25,15 @@ In this work, I will create an Amazon-like storefront with MySQL. The function o
 ![MySQL Database](/images/create_database.png)
 Format: ![Alt Text](url)
 * Create seeds.sql consisting of the database script
-*Populate the database with 10 different products.
+![MySQL Database](/images/bamazon_database.png)
+Format: ![Alt bamazon_display](url)
+* Populate the database with 10 different products.
+* Create a node application called "bamazonCustomer.js"
+* Run the node application: Display all the items available for sale
+![MySQL Database](/images/product_display.png.png)
+Format: ![Alt product_display](url)
+
+See also table displayed in MySQL workbench
+![MySQL Database](/images/table_display.png.png)
+Format: ![Alt table_display](url)
 
