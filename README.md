@@ -21,4 +21,7 @@ In this work, I will create an Amazon-like storefront with MySQL. The function o
 	* Make an numeric column called "price"
 	* Make an numeric column called "stock_quantity"
 	* Set the primary key of the table to id
+* Run the app to create database and table
+![MySQL Database](/images/create_database.png)
+Format: ![Alt Text](url)
 
