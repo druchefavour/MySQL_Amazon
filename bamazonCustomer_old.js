@@ -25,22 +25,32 @@ connection.query("SELECT * FROM products", function (err, res) {
 	if (err) throw err;
 	for (var i = 0; i < res.length; i++) {
 		console.log(res);
-	}
-	return false;
-});
- 
+//		var productsInStock = res[i].stock_quantity;
+//		console.log(productsInStock); 
 
+	}
+}); 
 
 var customerQuestion = function() {
-// Write switch statements to take the two cases
-//switch (customerQuestion) {
-//	case "Display all products":
-//		allProductDisplay();
-//		break;
+	//Prompt the customer to answer questions
+/*	inquirer.prompt({
+		name: "action",
+		type: "list",
+		message: "Choose from the following",
+		choices: ["What is the ID of the product you would like to buy?", "How many units of the product would you like to buy?"]
+	}).then(function(answer) {
+		// Write switch statements to take the two cases
+		switch (answer.action) {
+			case "What is the ID of the product you would like to buy?":
+			    productIdSearch();
+				break;
 
-//	case "Product Search":
-		numberOfUnits();
-//		break;
+			case "How many units of the product would you like to buy?":
+				numberOfUnits();
+				break;
+		}
+	});*/
+	numberOfUnits();
 };
 
 // Prompt user to indicate the id of the product he wants to buy
@@ -66,7 +76,7 @@ var numberOfUnits = function() {
 	inquirer.prompt([{
 		name: "units",
 		type: "input",
-		message: "How many units of the product would you like to buy?:",
+		message: "How many units of the product would you like to buy?",
 		validate: function(value) {
 			if(isNaN(value) === false) {
 				return true;
@@ -76,7 +86,7 @@ var numberOfUnits = function() {
 	},{
 		name: "id",
 		type: "input",
-		message: "Enter the product ID:",
+		message: "ReEnter the equivalent ID",
 		validate: function(value) {
 			if (isNaN(value) === false) {
 				return true;
@@ -84,18 +94,12 @@ var numberOfUnits = function() {
 			return false;
 		}
 	}]).then(function(answer) {
-		connection.query("SELECT id, stock_quantity, product_name FROM products WHERE ?",{ id: answer.id }, function(err, res){
-			console.log("\n------------------------------------");
-			res.forEach(function(dataRow) {
-				var numberAvailable = dataRow.stock_quantity;
-				if (numberAvailable < answer.units) {
-					console.log('Sorry, there are not enough products available.');
-				} else {
-					console.log('Success! you can purchase ' + ' ' + answer.units + ' ' + dataRow.product_name + 's!');
-				}
+		connection.query("SELECT id, stock_quantity FROM  products WHERE ?",{units: answer.units},function(err, res){
+			//for (var i = 0; i < res.length; i++) {
+				console.log("------------------------------------");
+				console.log(res);	
+				console.log("------------------------------------");
 			});
-			console.log("------------------------------------");
-		});
 		customerQuestion();
 	});
 };

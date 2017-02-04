@@ -33,6 +33,7 @@ See also table displayed in MySQL workbench
 ![MySQL Database](/images/table_display.png)
 * Create a switch statement and use inquirer to make app prompt users with two messages:
 	*The ID of the product they would like to buy.
-	*How many units of the product they would like to buy. 
+	*How many units of the product they would like to buy.
+* Use the validate statement (under the function numberOfUnits()) to check if the store has enough of the product to meet the customer's request. 
 
 
