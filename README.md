@@ -35,6 +35,17 @@ See also table displayed in MySQL workbench
 	*The ID of the product they would like to buy.
 	*How many units of the product they would like to buy.
 * Use the validate statement (under the function numberOfUnits()) to check if the store has enough of the product to meet the customer's request. 
-* If order goes through update mySQL database to reflect the remaining quantity. 
+* If order goes through update mySQL database to reflect the remaining quantity.
+Image shows the dispay of app updating stock-quantity when order goes through:
+![MySQL Database](/images/update_display.png)
+See also table displayed in MySQL workbench
+
+This image shows the original table showing the stock quantity for product with ID = 1
+![MySQL Database](/images/original_table.png)
+See also table displayed in MySQL workbench
+
+Compare with this image that show the updated table showing the stock quantity for product with ID = 1 when order of 20 items had gone through
+![MySQL Database](/images/original_table.png)
+See also table displayed in MySQL workbench
 
 
