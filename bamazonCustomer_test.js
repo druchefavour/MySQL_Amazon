@@ -101,15 +101,22 @@ var numberOfUnits = function() {
 			console.log("\n------------------------------------");
 			res.forEach(function(dataRow) {
 				var numberAvailable = dataRow.stock_quantity;
+				var updatedStockQuantity = numberAvailable-answer.units;
 				if(numberAvailable < answer.units) {
 					console.log("Sorry, there are not enough products in stock");
 				} else {
-					console.log('Success! you can purchase' + ' ' + answer.units + ' ' + dataRow.product_name + 's!');
-				}
+					console.log('Success! you have purchased' + ' ' + answer.units + ' ' + dataRow.product_name + 's!');
+					console.log("------------------------------------");
+					//Update the stock quantity after purchase
+					connection.query("UPDATE products SET ? WHERE ?", [{stock_quantity: updatedStockQuantity}, {id:answer.id}], function (err, res) {
+						if (err) throw err;
+						console.log("The products table has been updated");
+						console.log("\n------------------------------------");
+						console.log(res);
+						});
+					};
+				})
+				})
 			});
-			console.log("------------------------------------");
-		});
-		customerQuestion();
-	});
-};
-
+			return false;
+		};

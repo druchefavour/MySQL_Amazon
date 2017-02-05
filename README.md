@@ -35,5 +35,6 @@ See also table displayed in MySQL workbench
 	*The ID of the product they would like to buy.
 	*How many units of the product they would like to buy.
 * Use the validate statement (under the function numberOfUnits()) to check if the store has enough of the product to meet the customer's request. 
+* If order goes through update mySQL database to reflect the remaining quantity. 
 
 
