@@ -36,13 +36,17 @@ See also table displayed in MySQL workbench
 	*How many units of the product they would like to buy.
 * Use the validate statement (under the function numberOfUnits()) to check if the store has enough of the product to meet the customer's request. 
 * If order goes through update mySQL database to reflect the remaining quantity.
-Image shows the dispay of app updating stock-quantity when order goes through:
+	*Image shows the dispay of app updating stock-quantity when order goes through:
 ![MySQL Database](/images/Dislplay_Updated_count.png)
 
-This image shows the original table showing the stock quantity for product with ID = 1
+	*This image shows the original table showing the stock quantity for product with ID = 1
 ![MySQL Database](/images/original_table.png)
 
-Compare with this image that show the updated table showing the stock quantity for product with ID = 1 when order of 20 items had gone through
+	*Compare with this image that show the updated table showing the stock quantity for product with ID = 1 when order of 20 items had gone through
 ![MySQL Database](/images/original_table.png)
+
+* Finally, the app calculates the total cost of the order and displays it for the customers.
+![MySQL Database](/images/total_cost.png)
+
 
 
