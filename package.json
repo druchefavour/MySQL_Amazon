@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/druchefavour/MySQL_Amazon#readme",
   "dependencies": {
+    "console.table": "^0.8.0",
     "inquirer": "^3.0.1",
     "mysql": "^2.13.0"
   }

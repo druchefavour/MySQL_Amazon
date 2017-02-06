@@ -21,19 +21,13 @@ console.log('connected as id ' + connection.threadId);
 });
 
 //Display all the items available for sale
-connection.query("UPDATE products SET ? WHERE ?", [{
-		stock_quantity: 54
-	},{
-		id: 1
-	}], function (err, res) {
-		if (err) throw err;
-		/*for (var i = 0; i < res.length; i++) {
-			console.log("==============================");
-			console.log("------------------------------");*/
-			console.log(res);
-			/*console.log("------------------------------");
-			console.log("------------------------------");
-		}*/
-	});
-//};
- 
+connection.query("SELECT * FROM products", function (err, res) {
+	if (err) throw err;
+	for (var i = 0; i < res.length; i++) {
+		console.log("==============================");
+		console.log("------------------------------");
+		console.table(res);
+		console.log("------------------------------");
+		console.log("------------------------------");
+	};
+}); 
