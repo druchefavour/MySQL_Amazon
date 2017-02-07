@@ -18,6 +18,8 @@ stock_quantity INTEGER(10),
   PRIMARY KEY (id)
   );
   
+  SELECT * FROM products;
+  
 -- Populate database with products
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("Goliath", "video", 10, 54);
@@ -48,4 +50,19 @@ VALUES ("Dining_Table", "funiture", 130, 18);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("Flash_Furniture", "funiture", 105, 39);
+
+ALTER TABLE products
+ADD COLUMN product_sales INT NOT NULL;
+SELECT * FROM products;
+
+ALTER TABLE products
+ADD COLUMN department_id INT NOT NULL;
  
+USE Bamazon;
+ALTER TABLE departments
+ADD COLUMN department_id INT AUTO_INCREMENT NOT NULL, 
+ADD COLUMN over_head_costs INT NOT NULL,
+ADD COLUMN total_profit INT NOT NULL;
+
+ALTER TABLE departments MODIFY COLUMN department_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
+SELECT * FROM departments;

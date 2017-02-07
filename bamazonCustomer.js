@@ -10,7 +10,7 @@ port: 3306,
 user: 'root',
 
 //Your password
-password: 'Ozpa67mp1$',
+password: '',
 database: 'Bamazon'
 });
 
@@ -96,12 +96,13 @@ var numberOfUnits = function() {
 					return false;
 				}	
 		}]).then(function(answer) {
-		connection.query("SELECT id, stock_quantity, product_name, price FROM  products WHERE ?", {id: answer.id},function(err, res) {
+		connection.query("SELECT id, stock_quantity, product_name, price, product_sales FROM  products WHERE ?", {id: answer.id},function(err, res) {
 			console.log("\n------------------------------------");
 			res.forEach(function(dataRow) {
 				var numberAvailable = dataRow.stock_quantity;
 				var updatedStockQuantity = numberAvailable-answer.units;
 				var totalCost = parseFloat(answer.units)*parseFloat(dataRow.price);
+				var productSales = parseFloat(dataRow.product_sales) + totalCost
 				if(numberAvailable < answer.units) {
 					console.log("Sorry, there are not enough products in stock");
 				} else {
@@ -117,9 +118,25 @@ var numberOfUnits = function() {
 						console.log('Your Total Cost is: ' + '$' + totalCost);
 						console.log("\n====================================");
 						});
-					};
-				})
+					// Update product sales after purchase
+					connection.query("UPDATE products SET ? WHERE ?", [{product_sales: productSales}, {id:answer.id}], function (err, res) {
+						if (err) throw err;
+						console.log(res);
+						console.log("\n------------------------------------");
+						console.log("The product sales column has been successfully updated");
+						console.log("\n------------------------------------");
+						});
+					//Modify bamazonCustomer.js to add the revenue from each transaction to the total_sales column
+					connection.query("SELECT department_name, SUM(product_sales) as total_sales FROM  products GROUP BY department_name", function(err, res) {
+						console.log("\n------------------------------------");
+						if (err) throw err;
+						console.table(res);
+						console.log("\n------------------------------------");
+						console.log("total sales for each department has been created")
+					});
+				};
 			})
-		});
+		})
+	});
 		return false;
 	};

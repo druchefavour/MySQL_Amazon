@@ -21,7 +21,7 @@ console.log('connected as id ' + connection.threadId);
 });
 
 //Display all the items available for sale
-connection.query("SELECT * FROM products", function (err, res) {
+/*connection.query("SELECT * FROM products", function (err, res) {
 	if (err) throw err;
 	for (var i = 0; i < res.length; i++) {
 		console.log("==============================");
@@ -30,4 +30,15 @@ connection.query("SELECT * FROM products", function (err, res) {
 		console.log("------------------------------");
 		console.log("------------------------------");
 	};
-}); 
+}); */
+
+/*connection.query("CREATE TABLE departments AS SELECT department_name, SUM(product_sales) AS total_sales FROM products GROUP BY department_name" , function (err, res) {
+			if (err) throw err;
+			console.log("==============================");
+				console.table(res);
+				console.log("------------------------------");
+			//menuOptions();
+		});*/
+connection.query("ALTER departments ADD COLUMN department_id INT(11) AUTO_INCREMENT, ADD COLUMN over_head_costs AFTER department_name, ADD COLUMN total_profit AFTER total_sales", function(err, res) {
+				console.log(res);
+			});
